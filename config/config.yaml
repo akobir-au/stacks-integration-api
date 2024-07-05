@@ -1,0 +1,10 @@
+app:
+  name: 'stacks integration api'
+  version: '1.0.0'
+  kubeconfig: '/Users/AKOBIR1/.kube/config'
+
+http:
+  port: '8080'
+
+logger:
+  log_level: 'debug'
