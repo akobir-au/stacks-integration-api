@@ -37,7 +37,7 @@ func NewRouter(handler *gin.Engine, l logger.Interface, u intfaces.IntegrationUs
 	// Creating a swaggo instance
 	swaggerHandler := ginSwagger.WrapHandler(swaggerFiles.Handler)
 
-	doc.GET("/*any", swaggerHandler)
+	doc.GET("/swagger/*any", swaggerHandler)
 
 	// K8s health probe
 	handler.GET("/health", func(c *gin.Context) {
