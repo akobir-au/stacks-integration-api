@@ -14,7 +14,19 @@ const docTemplate = `{
     },
     "host": "{{.Host}}",
     "basePath": "{{.BasePath}}",
-    "paths": {},
+    "paths": {
+        "/karpenter/": {
+            "get": {
+                "description": "Show details of the karperter deployment",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Fetch karperter deployment",
+                "operationId": "Karpenter Deployment",
+                "responses": {}
+            }
+        }
+    },
     "securityDefinitions": {
         "BasicAuth": {
             "type": "basic"

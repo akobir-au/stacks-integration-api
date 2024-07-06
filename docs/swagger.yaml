@@ -5,7 +5,15 @@ info:
   description: API performing integration tests against Stacks
   title: Stacks Integration API
   version: "1.0"
-paths: {}
+paths:
+  /karpenter/:
+    get:
+      description: Show details of the karperter deployment
+      operationId: Karpenter Deployment
+      produces:
+      - application/json
+      responses: {}
+      summary: Fetch karperter deployment
 securityDefinitions:
   BasicAuth:
     type: basic

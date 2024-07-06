@@ -5,7 +5,6 @@ import (
 	"github.com/akobir-au/stacks_integration_api/internal/entity"
 	"github.com/akobir-au/stacks_integration_api/internal/entity/intfaces"
 	"github.com/akobir-au/stacks_integration_api/pkg/logger"
-	_ "github.com/swaggo/swag/example/celler/httputil"
 	"net/http"
 )
 
@@ -28,10 +27,7 @@ func NewKarpenterRoute(handler *gin.RouterGroup, t intfaces.IntegrationUsecase, 
 // @Description Show details of the karperter deployment
 // @ID          Karpenter Deployment
 // @Produce     json
-// @Success     200 {object} singleBlogResponse
-// @Failure     400 {object} httputil.HTTPError
 // @Router      /karpenter/ [get]
-
 func (route *KarpenterRoute) deployment(ctx *gin.Context) {
 	deployment, err := route.u.GetDeployment(ctx, "karpenter", "karpenter")
 	if err != nil {

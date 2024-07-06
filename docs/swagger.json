@@ -8,7 +8,19 @@
     },
     "host": "localhost:8080",
     "basePath": "/api/v1",
-    "paths": {},
+    "paths": {
+        "/karpenter/": {
+            "get": {
+                "description": "Show details of the karperter deployment",
+                "produces": [
+                    "application/json"
+                ],
+                "summary": "Fetch karperter deployment",
+                "operationId": "Karpenter Deployment",
+                "responses": {}
+            }
+        }
+    },
     "securityDefinitions": {
         "BasicAuth": {
             "type": "basic"

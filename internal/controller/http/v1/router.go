@@ -1,6 +1,8 @@
 package v1
 
 import (
+	"net/http"
+
 	"github.com/gin-gonic/gin"
 	"github.com/akobir-au/stacks_integration_api/internal/controller/http/v1/karpenter_route"
 	"github.com/akobir-au/stacks_integration_api/internal/entity/intfaces"
@@ -8,8 +10,6 @@ import (
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	swaggerFiles "github.com/swaggo/files"
 	ginSwagger "github.com/swaggo/gin-swagger"
-	"net/http"
-
 	// Swagger docs -.
 	_ "github.com/akobir-au/stacks_integration_api/docs"
 )
@@ -37,7 +37,7 @@ func NewRouter(handler *gin.Engine, l logger.Interface, u intfaces.IntegrationUs
 	// Creating a swaggo instance
 	swaggerHandler := ginSwagger.WrapHandler(swaggerFiles.Handler)
 
-	doc.GET("/swagger/*any", swaggerHandler)
+	doc.GET("/*any", swaggerHandler)
 
 	// K8s health probe
 	handler.GET("/health", func(c *gin.Context) {
