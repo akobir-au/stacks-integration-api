@@ -31,7 +31,7 @@ func NewKarpenterRoute(handler *gin.RouterGroup, t intfaces.IntegrationUsecase, 
 func (route *KarpenterRoute) deployment(ctx *gin.Context) {
 	deployment, err := route.u.GetDeployment(ctx, "karpenter", "karpenter")
 	if err != nil {
-		route.l.Error(err, "http - v1 - getting single blog")
+		route.l.Error(err, "http - v1 - getting deployment failed")
 		ctx.JSON(entity.GetStatusCode(err), entity.ErrorCodeResponse(err))
 		return
 	}
